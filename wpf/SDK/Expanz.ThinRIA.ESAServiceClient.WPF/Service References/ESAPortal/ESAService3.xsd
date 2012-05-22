@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.expanz.com/ESAAdminService" elementFormDefault="qualified" targetNamespace="http://www.expanz.com/ESAAdminService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AddSite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="authMethod" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddSiteResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BroadcastMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BroadcastMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BroadcastMessageResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeUserPasswordResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAdminSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAdminSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateAdminSessionResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableSessionManager">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SessionManagerURI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="disable" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableSessionManagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DisableSessionManagerResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListSessionManagersForSite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListSessionManagersForSiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ListSessionManagersForSiteResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListSessionsForServer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serverURI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListSessionsForServerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ListSessionsForServerResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ListUsersResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetUserPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetUserPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResetUserPasswordResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSessionManagerLoggingProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SessionManagerURI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logDebug" type="xs:boolean" />
+        <xs:element minOccurs="0" name="logInfo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="logWarning" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSessionManagerLoggingProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetSessionManagerLoggingProfileResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportAllBlobsBegin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="handle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="totalBlobs" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportAllBlobsBeginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExportAllBlobsBeginResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="handle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="totalBlobs" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportAllBlobsChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportAllBlobsChunkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExportAllBlobsChunkResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportAllBlobsCleanup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ok" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportAllBlobsCleanupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncronisePersistentSchema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DBML" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apply" type="xs:boolean" />
+        <xs:element minOccurs="0" name="script" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncronisePersistentSchemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SyncronisePersistentSchemaResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DBML" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="script" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TerminateSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serverURI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TerminateSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TerminateSessionResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="messages" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTraceLogging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="traceName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="traceType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="traceLogEnabled" type="xs:boolean" />
+        <xs:element minOccurs="0" name="serverURI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTraceLoggingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetTraceLoggingResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopTraceLogging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopTraceLoggingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StopTraceLoggingResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTraceLogs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activeOnly" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTraceLogsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTraceLogsResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTraceDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestOnly" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hasMoreRows" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTraceDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTraceDetailResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hasMoreRows" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnableDiagnostics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="enabled" type="xs:boolean" />
+        <xs:element minOccurs="0" name="enableForSiteManager" type="xs:boolean" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="appServerUri" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deleteExistingData" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnableDiagnosticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EnableDiagnosticsResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogsDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="from" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogsDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLogsDetailsResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

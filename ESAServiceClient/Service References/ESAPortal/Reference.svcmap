@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2b58eacc-f859-401f-abbb-433b4a0db530" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://test.expanz.com/ESADemoService/ESAService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ESAService.disco" MetadataType="Disco" ID="e5bfe493-dea3-4282-8042-cdf27da97143" SourceId="1" SourceUrl="http://test.expanz.com/ESADemoService/ESAService.svc?disco" />
+    <MetadataFile FileName="ESAService.xsd" MetadataType="Schema" ID="376937b4-c02c-4559-aa69-b5fd1b64409e" SourceId="1" SourceUrl="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ESAService1.xsd" MetadataType="Schema" ID="fbc5a5e9-5d95-4fa4-a4e6-a4ca91c99f7a" SourceId="1" SourceUrl="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ESAService2.xsd" MetadataType="Schema" ID="2ea1ce0f-89cc-476f-99cf-d0ce994d272a" SourceId="1" SourceUrl="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ESAService.wsdl" MetadataType="Wsdl" ID="48ef704c-6745-4515-97a7-25b9a8bfa29e" SourceId="1" SourceUrl="http://test.expanz.com/ESADemoService/ESAService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ESAService1.wsdl" MetadataType="Wsdl" ID="33c13a0c-955c-4bbc-b24c-90a673c4529a" SourceId="1" SourceUrl="http://test.expanz.com/ESADemoService/ESAService.svc?wsdl" />
+    <MetadataFile FileName="ESAService2.wsdl" MetadataType="Wsdl" ID="f0e5fbe6-c7b7-4ddc-b4be-3c1830b4cea8" SourceId="1" SourceUrl="http://test.expanz.com/ESADemoService/ESAService.svc?wsdl=wsdl1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

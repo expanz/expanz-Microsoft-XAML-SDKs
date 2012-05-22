@@ -1,0 +1,22 @@
+﻿<Window x:Class="Expanz.ThinRIA.TrafficDebug"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Traffic Debug" Height="456" Width="629" Loaded="Window_Loaded">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" 
+                HorizontalAlignment="Right" Margin="0,12,10,0" Grid.Row="1" />
+
+        <TabControl HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch">
+            <TabItem Header="Request">
+                <TextBox IsReadOnly="True" Name="txtRequest" AcceptsReturn="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+            </TabItem>
+            <TabItem Header="Response">
+                <TextBox IsReadOnly="True" Name="txtResponse" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

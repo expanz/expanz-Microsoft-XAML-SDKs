@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expanz.ThinRIA.ESAServiceClient.WPF", "wpf\SDK\Expanz.ThinRIA.ESAServiceClient.WPF\Expanz.ThinRIA.ESAServiceClient.WPF.csproj", "{53BF7D23-DB3F-4923-8961-6867DC5DE211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expanz.ThinRIA.WPF", "wpf\SDK\Expanz.ThinRIA.WPF\Expanz.ThinRIA.WPF.csproj", "{456B5359-6794-4942-B7F2-B1638C94A078}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53BF7D23-DB3F-4923-8961-6867DC5DE211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BF7D23-DB3F-4923-8961-6867DC5DE211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BF7D23-DB3F-4923-8961-6867DC5DE211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BF7D23-DB3F-4923-8961-6867DC5DE211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{456B5359-6794-4942-B7F2-B1638C94A078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456B5359-6794-4942-B7F2-B1638C94A078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456B5359-6794-4942-B7F2-B1638C94A078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{456B5359-6794-4942-B7F2-B1638C94A078}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

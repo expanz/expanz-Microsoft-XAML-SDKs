@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ESAService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IESAService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IESAService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_IESAService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://crp.expanz.com/ClientPortal/ESAService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://crp.expanz.com/ClientPortal/ESAService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IESAService_AddSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSite" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_AddSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_BroadcastMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:BroadcastMessage" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_BroadcastMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BroadcastMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ChangeUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ChangeUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_CreateSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSession" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_CreateSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_DisableSessionManager_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableSessionManager" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_DisableSessionManager_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableSessionManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Exec_InputMessage">
+    <wsdl:part name="parameters" element="tns:Exec" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Exec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecAnonymous_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecAnonymous" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecAnonymous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecAnonymousResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecAnonymousWithTestMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecAnonymousWithTestMode" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecAnonymousWithTestMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecAnonymousWithTestModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_GetSchemaForActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemaForActivity" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_GetSchemaForActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemaForActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListActivitiesForSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListActivitiesForSite" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListActivitiesForSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListActivitiesForSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListAvailableSites_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListAvailableSites" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListAvailableSites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListAvailableSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListSessionManagersForSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListSessionManagersForSite" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListSessionManagersForSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListSessionManagersForSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListSessionsForServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListSessionsForServer" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListSessionsForServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListSessionsForServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListUsers" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ProcessEDIWithTestMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEDIWithTestMode" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ProcessEDIWithTestMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEDIWithTestModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ProcessEDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEDI" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ProcessEDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ReleaseSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseSession" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ReleaseSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ResetUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ResetUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SetSessionManagerLoggingProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSessionManagerLoggingProfile" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SetSessionManagerLoggingProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSessionManagerLoggingProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SyncronisePersistentSchema_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncronisePersistentSchema" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SyncronisePersistentSchema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncronisePersistentSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_TerminateSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateSession" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_TerminateSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_TrickleContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:TrickleContent" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_TrickleContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TrickleContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_WebServerPing_InputMessage">
+    <wsdl:part name="parameters" element="tns:WebServerPing" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_WebServerPing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WebServerPingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SiteManagerPing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SiteManagerPing" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SiteManagerPing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SiteManagerPingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SetTraceLogging_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTraceLogging" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SetTraceLogging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTraceLoggingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IESAService">
+    <wsdl:operation name="AddSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/AddSite" message="tns:IESAService_AddSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/AddSiteResponse" message="tns:IESAService_AddSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/BroadcastMessage" message="tns:IESAService_BroadcastMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/BroadcastMessageResponse" message="tns:IESAService_BroadcastMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ChangeUserPassword" message="tns:IESAService_ChangeUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ChangeUserPasswordResponse" message="tns:IESAService_ChangeUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/CreateSession" message="tns:IESAService_CreateSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/CreateSessionResponse" message="tns:IESAService_CreateSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/CreateUser" message="tns:IESAService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/CreateUserResponse" message="tns:IESAService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/DeleteUser" message="tns:IESAService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/DeleteUserResponse" message="tns:IESAService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableSessionManager">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/DisableSessionManager" message="tns:IESAService_DisableSessionManager_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/DisableSessionManagerResponse" message="tns:IESAService_DisableSessionManager_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/Exec" message="tns:IESAService_Exec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ExecResponse" message="tns:IESAService_Exec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymous">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ExecAnonymous" message="tns:IESAService_ExecAnonymous_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ExecAnonymousResponse" message="tns:IESAService_ExecAnonymous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymousWithTestMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ExecAnonymousWithTestMode" message="tns:IESAService_ExecAnonymousWithTestMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ExecAnonymousWithTestModeResponse" message="tns:IESAService_ExecAnonymousWithTestMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForActivity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/GetSchemaForActivity" message="tns:IESAService_GetSchemaForActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/GetSchemaForActivityResponse" message="tns:IESAService_GetSchemaForActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListActivitiesForSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ListActivitiesForSite" message="tns:IESAService_ListActivitiesForSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ListActivitiesForSiteResponse" message="tns:IESAService_ListActivitiesForSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAvailableSites">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ListAvailableSites" message="tns:IESAService_ListAvailableSites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ListAvailableSitesResponse" message="tns:IESAService_ListAvailableSites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionManagersForSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ListSessionManagersForSite" message="tns:IESAService_ListSessionManagersForSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ListSessionManagersForSiteResponse" message="tns:IESAService_ListSessionManagersForSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionsForServer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ListSessionsForServer" message="tns:IESAService_ListSessionsForServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ListSessionsForServerResponse" message="tns:IESAService_ListSessionsForServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ListUsers" message="tns:IESAService_ListUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ListUsersResponse" message="tns:IESAService_ListUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/Ping" message="tns:IESAService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/PingResponse" message="tns:IESAService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDIWithTestMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ProcessEDIWithTestMode" message="tns:IESAService_ProcessEDIWithTestMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ProcessEDIWithTestModeResponse" message="tns:IESAService_ProcessEDIWithTestMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ProcessEDI" message="tns:IESAService_ProcessEDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ProcessEDIResponse" message="tns:IESAService_ProcessEDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ReleaseSession" message="tns:IESAService_ReleaseSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ReleaseSessionResponse" message="tns:IESAService_ReleaseSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/ResetUserPassword" message="tns:IESAService_ResetUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/ResetUserPasswordResponse" message="tns:IESAService_ResetUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSessionManagerLoggingProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/SetSessionManagerLoggingProfile" message="tns:IESAService_SetSessionManagerLoggingProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/SetSessionManagerLoggingProfileResponse" message="tns:IESAService_SetSessionManagerLoggingProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncronisePersistentSchema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/SyncronisePersistentSchema" message="tns:IESAService_SyncronisePersistentSchema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/SyncronisePersistentSchemaResponse" message="tns:IESAService_SyncronisePersistentSchema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminateSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/TerminateSession" message="tns:IESAService_TerminateSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/TerminateSessionResponse" message="tns:IESAService_TerminateSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/Test" message="tns:IESAService_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/TestResponse" message="tns:IESAService_Test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TrickleContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/TrickleContent" message="tns:IESAService_TrickleContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/TrickleContentResponse" message="tns:IESAService_TrickleContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WebServerPing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/WebServerPing" message="tns:IESAService_WebServerPing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/WebServerPingResponse" message="tns:IESAService_WebServerPing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SiteManagerPing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/SiteManagerPing" message="tns:IESAService_SiteManagerPing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/SiteManagerPingResponse" message="tns:IESAService_SiteManagerPing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTraceLogging">
+      <wsdl:input wsaw:Action="http://tempuri.org/IESAService/SetTraceLogging" message="tns:IESAService_SetTraceLogging_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IESAService/SetTraceLoggingResponse" message="tns:IESAService_SetTraceLogging_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IESAService" type="tns:IESAService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSite">
+      <soap:operation soapAction="http://tempuri.org/IESAService/AddSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastMessage">
+      <soap:operation soapAction="http://tempuri.org/IESAService/BroadcastMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSession">
+      <soap:operation soapAction="http://tempuri.org/IESAService/CreateSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IESAService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IESAService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableSessionManager">
+      <soap:operation soapAction="http://tempuri.org/IESAService/DisableSessionManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <soap:operation soapAction="http://tempuri.org/IESAService/Exec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymous">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ExecAnonymous" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymousWithTestMode">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ExecAnonymousWithTestMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForActivity">
+      <soap:operation soapAction="http://tempuri.org/IESAService/GetSchemaForActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListActivitiesForSite">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ListActivitiesForSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAvailableSites">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ListAvailableSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionManagersForSite">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ListSessionManagersForSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionsForServer">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ListSessionsForServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUsers">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ListUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://tempuri.org/IESAService/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDIWithTestMode">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ProcessEDIWithTestMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDI">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ProcessEDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseSession">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ReleaseSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetUserPassword">
+      <soap:operation soapAction="http://tempuri.org/IESAService/ResetUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSessionManagerLoggingProfile">
+      <soap:operation soapAction="http://tempuri.org/IESAService/SetSessionManagerLoggingProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncronisePersistentSchema">
+      <soap:operation soapAction="http://tempuri.org/IESAService/SyncronisePersistentSchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateSession">
+      <soap:operation soapAction="http://tempuri.org/IESAService/TerminateSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/IESAService/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrickleContent">
+      <soap:operation soapAction="http://tempuri.org/IESAService/TrickleContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServerPing">
+      <soap:operation soapAction="http://tempuri.org/IESAService/WebServerPing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SiteManagerPing">
+      <soap:operation soapAction="http://tempuri.org/IESAService/SiteManagerPing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTraceLogging">
+      <soap:operation soapAction="http://tempuri.org/IESAService/SetTraceLogging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IESAService" type="tns:IESAService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IESAService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/AddSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastMessage">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/BroadcastMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/CreateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableSessionManager">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/DisableSessionManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Exec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymous">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ExecAnonymous" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymousWithTestMode">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ExecAnonymousWithTestMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForActivity">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/GetSchemaForActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListActivitiesForSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListActivitiesForSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAvailableSites">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListAvailableSites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionManagersForSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListSessionManagersForSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionsForServer">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListSessionsForServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUsers">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDIWithTestMode">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ProcessEDIWithTestMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDI">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ProcessEDI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ReleaseSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ResetUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSessionManagerLoggingProfile">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SetSessionManagerLoggingProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncronisePersistentSchema">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SyncronisePersistentSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/TerminateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrickleContent">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/TrickleContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServerPing">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/WebServerPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SiteManagerPing">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SiteManagerPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTraceLogging">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SetTraceLogging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_IESAService" type="tns:IESAService">
+    <wsp:PolicyReference URI="#CustomBinding_IESAService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/AddSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastMessage">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/BroadcastMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/CreateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableSessionManager">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/DisableSessionManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Exec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymous">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ExecAnonymous" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymousWithTestMode">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ExecAnonymousWithTestMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForActivity">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/GetSchemaForActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListActivitiesForSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListActivitiesForSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAvailableSites">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListAvailableSites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionManagersForSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListSessionManagersForSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionsForServer">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListSessionsForServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUsers">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDIWithTestMode">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ProcessEDIWithTestMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDI">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ProcessEDI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ReleaseSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ResetUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSessionManagerLoggingProfile">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SetSessionManagerLoggingProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncronisePersistentSchema">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SyncronisePersistentSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/TerminateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrickleContent">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/TrickleContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServerPing">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/WebServerPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SiteManagerPing">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SiteManagerPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTraceLogging">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SetTraceLogging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_IESAService1" type="tns:IESAService">
+    <wsp:PolicyReference URI="#CustomBinding_IESAService1_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/AddSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastMessage">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/BroadcastMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/CreateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableSessionManager">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/DisableSessionManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Exec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymous">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ExecAnonymous" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymousWithTestMode">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ExecAnonymousWithTestMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForActivity">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/GetSchemaForActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListActivitiesForSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListActivitiesForSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAvailableSites">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListAvailableSites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionManagersForSite">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListSessionManagersForSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionsForServer">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListSessionsForServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUsers">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ListUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDIWithTestMode">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ProcessEDIWithTestMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDI">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ProcessEDI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ReleaseSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/ResetUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSessionManagerLoggingProfile">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SetSessionManagerLoggingProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncronisePersistentSchema">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SyncronisePersistentSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateSession">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/TerminateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrickleContent">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/TrickleContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServerPing">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/WebServerPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SiteManagerPing">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SiteManagerPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTraceLogging">
+      <soap12:operation soapAction="http://tempuri.org/IESAService/SetTraceLogging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ESAService">
+    <wsdl:port name="BasicHttpBinding_IESAService" binding="tns:BasicHttpBinding_IESAService">
+      <soap:address location="http://crp.expanz.com/ClientPortal/ESAService.svc/basic" />
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IESAService" binding="tns:WSHttpBinding_IESAService">
+      <soap12:address location="http://crp.expanz.com/ClientPortal/ESAService.svc/ws" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://crp.expanz.com/ClientPortal/ESAService.svc/ws</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_IESAService" binding="tns:CustomBinding_IESAService">
+      <soap12:address location="https://expanz01/ClientPortal/ESAService.svc/compressedssl" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://expanz01/ClientPortal/ESAService.svc/compressedssl</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_IESAService1" binding="tns:CustomBinding_IESAService1">
+      <soap12:address location="http://crp.expanz.com/ClientPortal/ESAService.svc/compressed" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://crp.expanz.com/ClientPortal/ESAService.svc/compressed</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

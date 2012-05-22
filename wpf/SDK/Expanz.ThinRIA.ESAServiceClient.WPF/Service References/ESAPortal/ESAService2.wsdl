@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.expanz.com/ESAAdminService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.expanz.com/ESAAdminService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.expanz.com/ESAAdminService/Imports">
+      <xsd:import schemaLocation="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd3" namespace="http://www.expanz.com/ESAAdminService" />
+      <xsd:import schemaLocation="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd0" namespace="http://www.expanz.com/ESAService" />
+      <xsd:import schemaLocation="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IESAAdminService_AddSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSite" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_AddSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_BroadcastMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:BroadcastMessage" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_BroadcastMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BroadcastMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ChangeUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ChangeUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_CreateAdminSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdminSession" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_CreateAdminSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdminSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_DisableSessionManager_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableSessionManager" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_DisableSessionManager_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableSessionManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ListSessionManagersForSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListSessionManagersForSite" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ListSessionManagersForSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListSessionManagersForSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ListSessionsForServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListSessionsForServer" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ListSessionsForServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListSessionsForServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ListUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListUsers" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ListUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ResetUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ResetUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_SetSessionManagerLoggingProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSessionManagerLoggingProfile" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_SetSessionManagerLoggingProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSessionManagerLoggingProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ExportAllBlobsBegin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportAllBlobsBegin" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ExportAllBlobsBegin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportAllBlobsBeginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ExportAllBlobsChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportAllBlobsChunk" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ExportAllBlobsChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportAllBlobsChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ExportAllBlobsCleanup_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportAllBlobsCleanup" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_ExportAllBlobsCleanup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportAllBlobsCleanupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_SyncronisePersistentSchema_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncronisePersistentSchema" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_SyncronisePersistentSchema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncronisePersistentSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_TerminateSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateSession" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_TerminateSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_SetTraceLogging_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTraceLogging" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_SetTraceLogging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTraceLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_StopTraceLogging_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopTraceLogging" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_StopTraceLogging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopTraceLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_GetTraceLogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTraceLogs" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_GetTraceLogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTraceLogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_GetTraceDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTraceDetail" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_GetTraceDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTraceDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_EnableDiagnostics_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnableDiagnostics" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_EnableDiagnostics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnableDiagnosticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_GetLogsDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogsDetails" />
+  </wsdl:message>
+  <wsdl:message name="IESAAdminService_GetLogsDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogsDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IESAAdminService">
+    <wsdl:operation name="AddSite">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/AddSite" message="tns:IESAAdminService_AddSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/AddSiteResponse" message="tns:IESAAdminService_AddSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastMessage">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/BroadcastMessage" message="tns:IESAAdminService_BroadcastMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/BroadcastMessageResponse" message="tns:IESAAdminService_BroadcastMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ChangeUserPassword" message="tns:IESAAdminService_ChangeUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ChangeUserPasswordResponse" message="tns:IESAAdminService_ChangeUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAdminSession">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/CreateAdminSession" message="tns:IESAAdminService_CreateAdminSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/CreateAdminSessionResponse" message="tns:IESAAdminService_CreateAdminSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/CreateUser" message="tns:IESAAdminService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/CreateUserResponse" message="tns:IESAAdminService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/DeleteUser" message="tns:IESAAdminService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/DeleteUserResponse" message="tns:IESAAdminService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableSessionManager">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/DisableSessionManager" message="tns:IESAAdminService_DisableSessionManager_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/DisableSessionManagerResponse" message="tns:IESAAdminService_DisableSessionManager_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionManagersForSite">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ListSessionManagersForSite" message="tns:IESAAdminService_ListSessionManagersForSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ListSessionManagersForSiteResponse" message="tns:IESAAdminService_ListSessionManagersForSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSessionsForServer">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ListSessionsForServer" message="tns:IESAAdminService_ListSessionsForServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ListSessionsForServerResponse" message="tns:IESAAdminService_ListSessionsForServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListUsers">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ListUsers" message="tns:IESAAdminService_ListUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ListUsersResponse" message="tns:IESAAdminService_ListUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetUserPassword">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ResetUserPassword" message="tns:IESAAdminService_ResetUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ResetUserPasswordResponse" message="tns:IESAAdminService_ResetUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSessionManagerLoggingProfile">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/SetSessionManagerLoggingProfile" message="tns:IESAAdminService_SetSessionManagerLoggingProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/SetSessionManagerLoggingProfileResponse" message="tns:IESAAdminService_SetSessionManagerLoggingProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportAllBlobsBegin">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ExportAllBlobsBegin" message="tns:IESAAdminService_ExportAllBlobsBegin_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ExportAllBlobsBeginResponse" message="tns:IESAAdminService_ExportAllBlobsBegin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportAllBlobsChunk">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ExportAllBlobsChunk" message="tns:IESAAdminService_ExportAllBlobsChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ExportAllBlobsChunkResponse" message="tns:IESAAdminService_ExportAllBlobsChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportAllBlobsCleanup">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ExportAllBlobsCleanup" message="tns:IESAAdminService_ExportAllBlobsCleanup_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/ExportAllBlobsCleanupResponse" message="tns:IESAAdminService_ExportAllBlobsCleanup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncronisePersistentSchema">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/SyncronisePersistentSchema" message="tns:IESAAdminService_SyncronisePersistentSchema_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/SyncronisePersistentSchemaResponse" message="tns:IESAAdminService_SyncronisePersistentSchema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminateSession">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/TerminateSession" message="tns:IESAAdminService_TerminateSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/TerminateSessionResponse" message="tns:IESAAdminService_TerminateSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTraceLogging">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/SetTraceLogging" message="tns:IESAAdminService_SetTraceLogging_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/SetTraceLoggingResponse" message="tns:IESAAdminService_SetTraceLogging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopTraceLogging">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/StopTraceLogging" message="tns:IESAAdminService_StopTraceLogging_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/StopTraceLoggingResponse" message="tns:IESAAdminService_StopTraceLogging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTraceLogs">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/GetTraceLogs" message="tns:IESAAdminService_GetTraceLogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/GetTraceLogsResponse" message="tns:IESAAdminService_GetTraceLogs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTraceDetail">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/GetTraceDetail" message="tns:IESAAdminService_GetTraceDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/GetTraceDetailResponse" message="tns:IESAAdminService_GetTraceDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableDiagnostics">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/EnableDiagnostics" message="tns:IESAAdminService_EnableDiagnostics_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/EnableDiagnosticsResponse" message="tns:IESAAdminService_EnableDiagnostics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogsDetails">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/GetLogsDetails" message="tns:IESAAdminService_GetLogsDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAAdminService/IESAAdminService/GetLogsDetailsResponse" message="tns:IESAAdminService_GetLogsDetails_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

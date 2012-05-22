@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expanz.ThinRIA.ESAServiceClient.Silverlight", "ESAServiceClient\Expanz.ThinRIA.ESAServiceClient.Silverlight.csproj", "{70A8670A-06DA-4BF9-88A6-0E26D91E2051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expanz.ThinRIA.Core.Silverlight", "silverlight4\sdk\Expanz.ThinRIA.Core.Silverlight\Expanz.ThinRIA.Core.Silverlight.csproj", "{203B41A8-08FB-481D-B2E8-5AB714638D7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70A8670A-06DA-4BF9-88A6-0E26D91E2051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A8670A-06DA-4BF9-88A6-0E26D91E2051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A8670A-06DA-4BF9-88A6-0E26D91E2051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A8670A-06DA-4BF9-88A6-0E26D91E2051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203B41A8-08FB-481D-B2E8-5AB714638D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203B41A8-08FB-481D-B2E8-5AB714638D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203B41A8-08FB-481D-B2E8-5AB714638D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203B41A8-08FB-481D-B2E8-5AB714638D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

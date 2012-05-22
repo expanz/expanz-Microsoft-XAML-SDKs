@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{456B5359-6794-4942-B7F2-B1638C94A078}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Expanz.ThinRIA</RootNamespace>
+    <AssemblyName>Expanz.ThinRIA.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName />
+    <SccLocalPath />
+    <SccAuxPath />
+    <SccProvider />
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Expanz.ThinRIA.WPF.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Behaviours\HideControl.cs">
+      <Link>Behaviours\HideControl.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Behaviours\ShowControl.cs">
+      <Link>Behaviours\ShowControl.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\BusyIndicatorEx.cs">
+      <Link>Controls\BusyIndicatorEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\DataGrid\DataGridWithEditButtons.cs">
+      <Link>Controls\DataGrid\DataGridWithEditButtons.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\TopLevelMenuItem.cs">
+      <Link>Controls\TopLevelMenuItem.cs</Link>
+    </Compile>
+    <Compile Include="ActivityContainers\PageEx.cs" />
+    <Compile Include="ActivityContainers\TabItemEx.cs" />
+    <Compile Include="ActivityContainers\WindowEx.cs" />
+    <Compile Include="Controls\Button\ContextMenuButton.WPF.cs" />
+    <Compile Include="Controls\ListView\ListViewEx.cs" />
+    <Compile Include="Controls\ListView\ListViewItemEx.cs" />
+    <Compile Include="Controls\PasswordBoxEx.cs" />
+    <Compile Include="Controls\PickListPopup.xaml.cs">
+      <DependentUpon>PickListPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PickListWindow.xaml.cs">
+      <DependentUpon>PickListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RadioButtonPanel.cs" />
+    <Compile Include="Controls\SliderEx.cs" />
+    <Compile Include="Controls\TextBoxMultiline.cs" />
+    <Compile Include="Controls\Treeview\TreeView.cs" />
+    <Compile Include="Controls\Treeview\TreeViewItemEx.cs" />
+    <Compile Include="Controls\VariantPanel.cs" />
+    <Compile Include="Forms\Export.xaml.cs">
+      <DependentUpon>Export.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Harness\ControlHarness.WPF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="XAMLFileDetails.WPF.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Expanz.ThinRIA.WPF.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\ActivityContainers\ActivityPanelEx.cs">
+      <Link>ActivityContainers\ActivityPanelEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\ActivityContainers\UserControlEx.cs">
+      <Link>ActivityContainers\UserControlEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\ActivityHarness.cs">
+      <Link>Harness\ActivityHarness.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\ApplicationEx.cs">
+      <Link>ApplicationEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\AuthenticationCompleteEventArgs.cs">
+      <Link>AuthenticationCompleteEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\BCLExtensions\CollectionExtension.cs">
+      <Link>BCLExtensions\CollectionExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\BCLExtensions\EnumerableExtension.cs">
+      <Link>BCLExtensions\EnumerableExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\BCLExtensions\StringExtension.cs">
+      <Link>BCLExtensions\StringExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\BCLExtensions\XElementExtensions.cs">
+      <Link>BCLExtensions\XElementExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Common\CheckArgument.cs">
+      <Link>Common\CheckArgument.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Common\CommonConstants.cs">
+      <Link>Common\CommonConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Common\Culture.cs">
+      <Link>Common\Culture.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Common\DelegateCommand.cs">
+      <Link>Common\DelegateCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Common\Disposable.cs">
+      <Link>Common\Disposable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Common\DynamicDataConverter.cs">
+      <Link>Common\DynamicDataConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Common\DynamicDataObject.cs">
+      <Link>Common\DynamicDataObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Common\Enums.cs">
+      <Link>Common\Enums.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\ControlHarness.cs">
+      <Link>Harness\ControlHarness.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\Buttons\ButtonEx.cs">
+      <Link>Controls\Button\ButtonEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\Buttons\CloseButton.cs">
+      <Link>Controls\Button\CloseButton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\Buttons\ContextMenuButtoncs.cs">
+      <Link>Controls\Button\ContextMenuButtoncs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\Buttons\HelperButton.cs">
+      <Link>Controls\Button\HelperButton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\Buttons\LaunchActivityButton.cs">
+      <Link>Controls\Button\LaunchActivityButton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\Buttons\PropertiesButton.cs">
+      <Link>Controls\Button\PropertiesButton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\CheckBoxEx.cs">
+      <Link>Controls\CheckBoxEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\ComboBox\ComboBoxEx.cs">
+      <Link>Controls\ComboBox\ComboBoxEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\ComboBox\ComboBoxItemEx.cs">
+      <Link>Controls\ComboBox\ComboBoxItemEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\Components\LoginForm.cs">
+      <Link>Controls\Components\LoginForm.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\DataGrid\CellValueConverter.cs">
+      <Link>Controls\DataGrid\CellValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\DataGrid\DataGridEx.cs">
+      <Link>Controls\DataGrid\DataGridEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\DataGrid\MouseDoubleClickCheck.cs">
+      <Link>Common\MouseDoubleClickCheck.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\DataGrid\RadioButtonColumn.cs">
+      <Link>Controls\DataGrid\RadioButtonColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\DataGrid\RadioButtonConverter.cs">
+      <Link>Controls\DataGrid\RadioButtonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\LabelEx.cs">
+      <Link>Controls\LabelEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\ListBox\ListBoxEx.cs">
+      <Link>Controls\ListBox\ListBoxEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\ListBox\ListBoxItemEx.cs">
+      <Link>Controls\ListBox\ListBoxItemEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\MessagePanel.cs">
+      <Link>Controls\MessagePanel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\TextBlockEx.cs">
+      <Link>Controls\TextBlockEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\TextBoxEx.cs">
+      <Link>Controls\TextBoxEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Controls\ImageEx.cs">
+      <Link>Controls\ImageEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\ESAServiceProxy.cs">
+      <Link>ESAServiceProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\FormMappings.cs">
+      <Link>FormMappings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Interfaces.cs">
+      <Link>Interfaces.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Logging.cs">
+      <Link>Logging.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\MenuCollection.cs">
+      <Link>MenuCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Preferences.cs">
+      <Link>Preferences.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Security\Authentication.cs">
+      <Link>Security\Authentication.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Security\AuthenticationResult.cs">
+      <Link>Security\AuthenticationResult.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Security\IAuthentication.cs">
+      <Link>Security\IAuthentication.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\ServerApplicationService.cs">
+      <Link>ServerApplicationService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\Session.cs">
+      <Link>Session.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Expanz.ThinRIA.Core\User.cs">
+      <Link>User.cs</Link>
+    </Compile>
+    <Compile Include="ApplicationEx.WPF.cs" />
+    <Compile Include="Common\DynamicDataObject.WPF.cs" />
+    <Compile Include="Controls\ApplicationNavigationMenu.cs" />
+    <Compile Include="Controls\DatePickerEx.cs" />
+    <Compile Include="Controls\MessageLabel.cs" />
+    <Compile Include="Session.WPF.cs" />
+    <Compile Include="TrafficDebug.xaml.cs">
+      <DependentUpon>TrafficDebug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBoxEx.WPF.cs" />
+    <Compile Include="ValueConverters\NotVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\VisibilityConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CriticalError.png" />
+    <Resource Include="Images\Error.png" />
+    <Resource Include="Images\Information.png" />
+    <Resource Include="Images\OK.png" />
+    <Resource Include="Images\Success.png" />
+    <Resource Include="Images\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Add.png" />
+    <Resource Include="Images\Cancel.png" />
+    <Resource Include="Images\Delete.png" />
+    <Resource Include="Images\Edit.png" />
+    <Resource Include="Images\Envelope.png" />
+    <Resource Include="Images\Find.png" />
+    <Resource Include="Images\Globe.png" />
+    <Resource Include="Images\Go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Expanz.ThinRIA.ESAServiceClient.WPF\Expanz.ThinRIA.ESAServiceClient.WPF.csproj">
+      <Project>{53BF7D23-DB3F-4923-8961-6867DC5DE211}</Project>
+      <Name>Expanz.ThinRIA.ESAServiceClient.WPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\PickListPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PickListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Export.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ApplicationNavigationMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BusyIndicatorEx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ButtonEx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DataGridWithEditButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\PasswordBoxEx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ImageEx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\LoginForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MessageLabel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\RadioButtonPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrafficDebug.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\image_upload.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

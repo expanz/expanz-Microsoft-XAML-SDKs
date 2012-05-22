@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/LoginForm.xaml" />
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/MessageLabel.xaml" />
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/ImageEx.xaml" />
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/PasswordBoxEx.xaml" />
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/ButtonEx.xaml" />
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/RadioButtonPanel.xaml" />
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/BusyIndicatorEx.xaml" />
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/ApplicationNavigationMenu.xaml" />
+        <ResourceDictionary Source="/Expanz.ThinRIA.WPF;component/Themes/DataGridWithEditButtons.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

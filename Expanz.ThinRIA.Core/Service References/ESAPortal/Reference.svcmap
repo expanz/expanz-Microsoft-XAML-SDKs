@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b8c8b446-632f-4b23-bd79-94f8de7e1f36" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://crp.expanz.com/clientportal/esaservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ESAService.wsdl" MetadataType="Wsdl" ID="b4daff48-2625-41ae-acf1-61a342b33796" SourceId="1" SourceUrl="http://crp.expanz.com/ClientPortal/ESAService.svc?wsdl" />
+    <MetadataFile FileName="ESAService.xsd" MetadataType="Schema" ID="e467aa20-0c47-49b5-855c-e9553d4c9842" SourceId="1" SourceUrl="http://crp.expanz.com/ClientPortal/ESAService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ESAService1.xsd" MetadataType="Schema" ID="be356a45-b1a3-4546-8046-e6fde335d964" SourceId="1" SourceUrl="http://crp.expanz.com/ClientPortal/ESAService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ESAService.disco" MetadataType="Disco" ID="a84a18a1-e54d-4445-94cf-43c89722bcf3" SourceId="1" SourceUrl="http://crp.expanz.com/ClientPortal/ESAService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C792835-B4C8-4AAF-A7CF-2DDA9F3D0E38}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Windows.Controls.Data</RootNamespace>
+    <AssemblyName>System.Windows.Controls.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName />
+    <SccLocalPath />
+    <SccAuxPath />
+    <SccProvider />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataGrid\Automation\DataGridAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridCellAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridColumnHeaderAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridColumnHeadersPresenterAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridDetailsPresenterAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridGroupItemAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridItemAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridRowAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridRowGroupHeaderAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridRowHeaderAutomationPeer.cs" />
+    <Compile Include="DataGrid\Automation\DataGridRowsPresenterAutomationPeer.cs" />
+    <Compile Include="DataGrid\DataGrid.xaml.cs" />
+    <Compile Include="DataGrid\DataGridAutoGeneratingColumnEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridBeginningEditEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridBoundColumn.cs" />
+    <Compile Include="DataGrid\DataGridCell.cs" />
+    <Compile Include="DataGrid\DataGridCellCollection.cs" />
+    <Compile Include="DataGrid\DataGridCellCoordinates.cs" />
+    <Compile Include="DataGrid\DataGridCellEditEndedEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridCellEditEndingEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridCellEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridCellsPresenter.cs" />
+    <Compile Include="DataGrid\DataGridCheckBoxColumn.cs" />
+    <Compile Include="DataGrid\DataGridColumn.cs" />
+    <Compile Include="DataGrid\DataGridColumnCollection.cs" />
+    <Compile Include="DataGrid\DataGridColumnEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridColumnHeader.xaml.cs" />
+    <Compile Include="DataGrid\DataGridColumnHeadersPresenter.cs" />
+    <Compile Include="DataGrid\DataGridColumnReorderingEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridColumns.cs" />
+    <Compile Include="DataGrid\DataGridDataConnection.cs" />
+    <Compile Include="DataGrid\DataGridDetailsPresenter.cs" />
+    <Compile Include="DataGrid\DataGridDisplayData.cs" />
+    <Compile Include="DataGrid\DataGridEnumerations.cs" />
+    <Compile Include="DataGrid\DataGridError.cs" />
+    <Compile Include="DataGrid\DataGridFillerColumn.cs" />
+    <Compile Include="DataGrid\DataGridFrozenGrid.cs" />
+    <Compile Include="DataGrid\DataGridLength.cs" />
+    <Compile Include="DataGrid\DataGridLengthConverter.cs" />
+    <Compile Include="DataGrid\DataGridPreparingCellForEditEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridRow.xaml.cs" />
+    <Compile Include="DataGrid\DataGridRowDetailsEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridRowEditEndedEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridRowEditEndingEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridRowEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridRowGroupHeader.cs" />
+    <Compile Include="DataGrid\DataGridRowGroupHeaderEventArgs.cs" />
+    <Compile Include="DataGrid\DataGridRowGroupInfo.cs" />
+    <Compile Include="DataGrid\DataGridRowHeader.xaml.cs" />
+    <Compile Include="DataGrid\DataGridRows.cs" />
+    <Compile Include="DataGrid\DataGridRowsPresenter.cs" />
+    <Compile Include="DataGrid\DataGridSelectedItemsCollection.cs" />
+    <Compile Include="DataGrid\DataGridTemplateColumn.cs" />
+    <Compile Include="DataGrid\DataGridTextColumn.cs" />
+    <Compile Include="DataGrid\DataGridValueConverter.cs" />
+    <Compile Include="DataGrid\IndexToValueTable.cs" />
+    <Compile Include="DataGrid\KeyboardHelper.cs" />
+    <Compile Include="DataGrid\Range.cs" />
+    <Compile Include="DataGrid\ResourceHelper.cs" />
+    <Compile Include="DataGrid\TestHooks\DataGridCellInternalTestHook.cs" />
+    <Compile Include="DataGrid\TestHooks\DataGridColumnHeaderInternalTestHook.cs" />
+    <Compile Include="DataGrid\TestHooks\DataGridInternalTestHook.cs" />
+    <Compile Include="DataGrid\TestHooks\DataGridRowInternalTestHook.cs" />
+    <Compile Include="DataGrid\TypeHelper.cs" />
+    <Compile Include="DataPager\DataPager.cs" />
+    <Compile Include="DataPager\DataPagerAutomationPeer.cs" />
+    <Compile Include="DataPager\PagerDisplayMode.cs" />
+    <Compile Include="DataPager\PagerResources3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PagerResources3.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DoubleUtil.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="InvalidEnumArgumentException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationUtil.cs" />
+    <Compile Include="VisualStates.cs" />
+    <Compile Include="WeakEventListener.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DataGrid\System.Windows.Controls.DataGrid.DataGridCheckBoxColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\System.Windows.Controls.DataGrid.DataGridColumnDropLocationIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGrid\System.Windows.Controls.DataGrid.DataGridTextColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="themes\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataPager\PagerResources3.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PagerResources3.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\System.ComponentModel.DataAnnotations\System.ComponentModel.DataAnnotations.csproj">
+      <Project>{114BF4E1-AAA0-4A87-8182-811CA6758C7A}</Project>
+      <Name>System.ComponentModel.DataAnnotations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.ComponentModel.WP7\System.ComponentModel.WP7.csproj">
+      <Project>{11AF3772-E082-40D5-AC40-A8F270CCEC7A}</Project>
+      <Name>System.ComponentModel.WP7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Controls.Data.Input\System.Windows.Controls.Data.Input.csproj">
+      <Project>{5F3F54A7-1359-449B-A80E-9DC6C34D1969}</Project>
+      <Name>System.Windows.Controls.Data.Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Data\System.Windows.Data.csproj">
+      <Project>{654FD0AF-1051-41A1-BC8D-DFC12AC25D6B}</Project>
+      <Name>System.Windows.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

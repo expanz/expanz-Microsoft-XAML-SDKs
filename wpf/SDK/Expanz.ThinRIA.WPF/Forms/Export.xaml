@@ -1,0 +1,47 @@
+﻿<Window x:Class="Expanz.ThinRIA.Forms.Export"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Export Data" Height="400" Width="450">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom" HorizontalContentAlignment="Stretch" x:Name="stackPanel">
+            <DockPanel Width="{Binding Path=ActualWidth, ElementName=stackPanel, Mode=Default}">
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                    <Button Click="Export_Click" Padding="5,0" IsDefault="True">Export</Button>
+                    <Button Click="Close_Click" Padding="5,0" Margin="5,0" IsCancel="True">Close</Button>
+                </StackPanel>
+                <TextBlock x:Name="Status"/>
+            </DockPanel>
+        </StatusBar>
+        <StackPanel TextBlock.FontSize="14">
+            <GroupBox Header="Export to" Margin="5" Padding="5">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton GroupName="ExportTo" x:Name="ExportDelimited" IsChecked="True">Delimted Text File</RadioButton>
+                        <StackPanel Margin="20,0">
+                            <RadioButton GroupName="Delimiter" x:Name="rbComma" IsChecked="True">Comma</RadioButton>
+                            <RadioButton GroupName="Delimiter" x:Name="rbPipe">Pipe</RadioButton>
+                            <RadioButton GroupName="Delimiter" x:Name="rbTab">Tab</RadioButton>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton GroupName="Delimiter" x:Name="rbOther">Other</RadioButton>
+                                <TextBlock x:Name="CustomDelimiter" Width="30"/>
+                        </StackPanel>
+                            <CheckBox x:Name="QuoteText" Margin="0,8,0,0" IsChecked="True">delimit text with double quotes</CheckBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <RadioButton GroupName="ExportTo" x:Name="ExportXML" Margin="0,20">XML</RadioButton>
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <CheckBox x:Name="IncludeHeadings" IsChecked="True">Include headings</CheckBox>
+                        <CheckBox x:Name="IncludeMetadata" Margin="25,0,0,0" IsChecked="True">Include Metadata</CheckBox>
+                        <CheckBox x:Name="WithHeadings" Margin="5,0" IsEnabled="{Binding Path=IsChecked, ElementName=IncludeMetadata, Mode=Default}">with headings</CheckBox>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Save as" Margin="0,10,0,0">
+                <StackPanel Margin="5">
+                    <CheckBox x:Name="cbTempFile" IsChecked="True">Use temp file</CheckBox>
+                    <CheckBox x:Name="AutoLaunch" IsChecked="True">Open/Launch automatically</CheckBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </DockPanel>
+</Window>

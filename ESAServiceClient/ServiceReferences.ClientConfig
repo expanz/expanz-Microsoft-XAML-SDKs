@@ -1,0 +1,61 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBindingSSL_IESAService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+                <binding name="BasicHttpBinding_IESAService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IESAService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+            </basicHttpBinding>
+            <customBinding>
+                <binding name="CustomBinding_IESAService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_IESAService2">
+                    <binaryMessageEncoding />
+                    <httpsTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_IESAAdminService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_IESAAdminService2">
+                    <binaryMessageEncoding />
+                    <httpsTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="https://test.expanz.com/ESADemoService/ESAService.svc/basicssl"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBindingSSL_IESAService"
+                contract="ESAPortal.IESAService" name="BasicHttpBindingSSL_IESAService" />
+            <endpoint address="http://test.expanz.com/ESADemoService/ESAService.svc/basic"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IESAService"
+                contract="ESAPortal.IESAService" name="BasicHttpBinding_IESAService" />
+            <endpoint address="http://test.expanz.com/ESADemoService/ESAService.svc/binary"
+                binding="customBinding" bindingConfiguration="CustomBinding_IESAService"
+                contract="ESAPortal.IESAService" name="CustomBinding_IESAService" />
+            <endpoint address="https://test.expanz.com/ESADemoService/ESAService.svc/basicssl"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IESAService1"
+                contract="ESAPortal.IESAService" name="BasicHttpBinding_IESAService1" />
+            <endpoint address="https://test.expanz.com/ESADemoService/ESAService.svc/binaryssl"
+                binding="customBinding" bindingConfiguration="CustomBinding_IESAService2"
+                contract="ESAPortal.IESAService" name="CustomBinding_IESAService2" />
+            <endpoint address="http://test.expanz.com/ESADemoService/ESAService.svc/binaryAdmin"
+                binding="customBinding" bindingConfiguration="CustomBinding_IESAAdminService"
+                contract="ESAPortal.IESAAdminService" name="CustomBinding_IESAAdminService" />
+            <endpoint address="https://test.expanz.com/ESADemoService/ESAService.svc/binarysslAdmin"
+                binding="customBinding" bindingConfiguration="CustomBinding_IESAAdminService2"
+                contract="ESAPortal.IESAAdminService" name="CustomBinding_IESAAdminService2" />
+        </client>
+    </system.serviceModel>
+</configuration>

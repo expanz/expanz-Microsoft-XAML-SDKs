@@ -1,0 +1,70 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ec="clr-namespace:Expanz.ThinRIA.Controls"
+    xmlns:converters="clr-namespace:Expanz.ThinRIA.Core.ValueConverters">
+    
+    <converters:VisibilityConverter x:Key="visibilityConverter" />
+
+    <Style TargetType="ec:ImageEx">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ec:ImageEx">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="UploadButton" Storyboard.TargetProperty="Opacity" Duration="00:00:00.3" From="0" To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="Actions">
+                                <VisualState x:Name="Inactive"/>
+                                <VisualState x:Name="Downloading">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ProgressBar">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Uploading">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ProgressBar">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        
+                        <Image x:Name="ImageControl" Stretch="None" />
+
+                        <Button Name="UploadButton" Visibility="{Binding IsEditable, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource visibilityConverter}}" Grid.Column="1" Width="120" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="4" Opacity="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="/Expanz.ThinRIA.Core.Silverlight;component/Images/image_upload.png" Stretch="None" />
+                                <TextBlock Text="Upload Image" Grid.Column="1" Margin="5,0,0,0" />
+                            </Grid>
+                        </Button>
+                        
+                        <ProgressBar x:Name="ProgressBar" Height="10" MaxWidth="100" Margin="3,0" IsIndeterminate="True" Visibility="Collapsed" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

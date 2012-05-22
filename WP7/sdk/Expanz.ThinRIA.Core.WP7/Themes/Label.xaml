@@ -1,0 +1,61 @@
+﻿<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+// All other rights reserved.
+-->
+
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ctl="clr-namespace:System.Windows.Controls"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+
+	<!--Label-->
+	<Style TargetType="ctl:Label">
+		<Setter Property="IsTabStop" Value="False"/>
+		<Setter Property="HorizontalContentAlignment" Value="Left"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ctl:Label">
+					<Grid>
+						<vsm:VisualStateManager.VisualStateGroups>
+							<vsm:VisualStateGroup x:Name="CommonStates">
+								<vsm:VisualState x:Name="Normal"/>
+								<vsm:VisualState x:Name="Disabled"/>
+							</vsm:VisualStateGroup>
+							<vsm:VisualStateGroup x:Name="ValidationStates">
+								<vsm:VisualState x:Name="Valid"/>
+								<vsm:VisualState x:Name="Invalid">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentControl" Storyboard.TargetProperty="Foreground" Duration="0:0:1.5">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<SolidColorBrush Color="Red" />
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+							</vsm:VisualStateGroup>
+							<vsm:VisualStateGroup x:Name="RequiredStates">
+								<vsm:VisualState x:Name="NotRequired"/>
+								<vsm:VisualState x:Name="Required">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentControl" Storyboard.TargetProperty="FontWeight" Duration="0">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="SemiBold"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</vsm:VisualState>
+							</vsm:VisualStateGroup>
+						</vsm:VisualStateManager.VisualStateGroups>
+						<Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="2">
+							<ContentControl x:Name="ContentControl" Foreground="{TemplateBinding Foreground}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" FontWeight="{TemplateBinding FontWeight}" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}" VerticalAlignment="{TemplateBinding VerticalAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsTabStop="False" />
+						</Border>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

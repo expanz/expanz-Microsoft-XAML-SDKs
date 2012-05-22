@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.expanz.com/ESAService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.expanz.com/ESAService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.expanz.com/ESAService/Imports">
+      <xsd:import schemaLocation="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd0" namespace="http://www.expanz.com/ESAService" />
+      <xsd:import schemaLocation="http://test.expanz.com/ESADemoService/ESAService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IESAService_ChangeUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ChangeUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_CreateSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSession" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_CreateSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Exec_InputMessage">
+    <wsdl:part name="parameters" element="tns:Exec" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Exec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecTimed_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecTimed" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecTimed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecTimedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecLogged_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecLogged" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecLogged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecLoggedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecAnonymous_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecAnonymous" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ExecAnonymous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecAnonymousResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListAvailableSites_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListAvailableSites" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListAvailableSites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListAvailableSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_PingWithLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:PingWithLoad" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_PingWithLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingWithLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ProcessEDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEDI" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ProcessEDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ReleaseSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseSession" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ReleaseSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_TrickleContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:TrickleContent" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_TrickleContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TrickleContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_WebServerPing_InputMessage">
+    <wsdl:part name="parameters" element="tns:WebServerPing" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_WebServerPing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WebServerPingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SiteManagerPing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SiteManagerPing" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_SiteManagerPing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SiteManagerPingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_GetSchemaForActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemaForActivity" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_GetSchemaForActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemaForActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListActivitiesForSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListActivitiesForSite" />
+  </wsdl:message>
+  <wsdl:message name="IESAService_ListActivitiesForSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListActivitiesForSiteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IESAService">
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/ChangeUserPassword" message="tns:IESAService_ChangeUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ChangeUserPasswordResponse" message="tns:IESAService_ChangeUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSession">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/CreateSession" message="tns:IESAService_CreateSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/CreateSessionResponse" message="tns:IESAService_CreateSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/Exec" message="tns:IESAService_Exec_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ExecResponse" message="tns:IESAService_Exec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecTimed">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/ExecTimed" message="tns:IESAService_ExecTimed_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ExecTimedResponse" message="tns:IESAService_ExecTimed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecLogged">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/ExecLogged" message="tns:IESAService_ExecLogged_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ExecLoggedResponse" message="tns:IESAService_ExecLogged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecAnonymous">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/ExecAnonymous" message="tns:IESAService_ExecAnonymous_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ExecAnonymousResponse" message="tns:IESAService_ExecAnonymous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAvailableSites">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/ListAvailableSites" message="tns:IESAService_ListAvailableSites_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ListAvailableSitesResponse" message="tns:IESAService_ListAvailableSites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/Ping" message="tns:IESAService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/PingResponse" message="tns:IESAService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PingWithLoad">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/PingWithLoad" message="tns:IESAService_PingWithLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/PingWithLoadResponse" message="tns:IESAService_PingWithLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEDI">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/ProcessEDI" message="tns:IESAService_ProcessEDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ProcessEDIResponse" message="tns:IESAService_ProcessEDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseSession">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/ReleaseSession" message="tns:IESAService_ReleaseSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ReleaseSessionResponse" message="tns:IESAService_ReleaseSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/Test" message="tns:IESAService_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/TestResponse" message="tns:IESAService_Test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TrickleContent">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/TrickleContent" message="tns:IESAService_TrickleContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/TrickleContentResponse" message="tns:IESAService_TrickleContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WebServerPing">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/WebServerPing" message="tns:IESAService_WebServerPing_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/WebServerPingResponse" message="tns:IESAService_WebServerPing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SiteManagerPing">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/SiteManagerPing" message="tns:IESAService_SiteManagerPing_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/SiteManagerPingResponse" message="tns:IESAService_SiteManagerPing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaForActivity">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/GetSchemaForActivity" message="tns:IESAService_GetSchemaForActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/GetSchemaForActivityResponse" message="tns:IESAService_GetSchemaForActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListActivitiesForSite">
+      <wsdl:input wsaw:Action="http://www.expanz.com/ESAService/IESAService/ListActivitiesForSite" message="tns:IESAService_ListActivitiesForSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.expanz.com/ESAService/IESAService/ListActivitiesForSiteResponse" message="tns:IESAService_ListActivitiesForSite_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

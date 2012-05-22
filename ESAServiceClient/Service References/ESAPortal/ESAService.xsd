@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.expanz.com/ESAService" elementFormDefault="qualified" targetNamespace="http://www.expanz.com/ESAService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ChangeUserPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeUserPasswordResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inXml" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateSessionResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Exec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inXML" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecTimed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inXML" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="responseTime" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecTimedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecTimedResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="responseTime" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecLogged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inXML" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logRequests" type="xs:boolean" />
+        <xs:element minOccurs="0" name="logResponses" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecLoggedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecLoggedResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecAnonymous">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inXml" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecAnonymousResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecAnonymousResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAvailableSites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAvailableSitesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ListAvailableSitesResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingWithLoad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="payload" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingWithLoadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PingWithLoadResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessEDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EDIAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inXml" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xsdURL" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessEDIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessEDIResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionHandle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReleaseSessionResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Test">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="val" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrickleContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bytes" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrickleContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TrickleContentResult" type="xs:int" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WebServerPing">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WebServerPingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WebServerPingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SiteManagerPing">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SiteManagerPingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SiteManagerPingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchemaForActivity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchemaForActivityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSchemaForActivityResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListActivitiesForSite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="site" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListActivitiesForSiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ListActivitiesForSiteResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errors" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

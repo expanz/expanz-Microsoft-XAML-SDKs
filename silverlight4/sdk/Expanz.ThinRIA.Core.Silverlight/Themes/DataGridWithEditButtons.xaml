@@ -1,0 +1,43 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ec="clr-namespace:Expanz.ThinRIA.Controls"
+    xmlns:ap="clr-namespace:Expanz.ThinRIA.Behaviours">
+
+    <Style TargetType="ec:DataGridWithEditButtons">
+        <Setter Property="SetContextOnSelect" Value="True" />
+        <Setter Property="SetContextOnDoubleClick" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ec:DataGridWithEditButtons">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="32" />
+                        </Grid.ColumnDefinitions>
+
+                        <ec:DataGridEx WrapperName="{TemplateBinding Name}" 
+                                       ModelObject="{TemplateBinding ModelObject}" PopulateMethod="{TemplateBinding PopulateMethod}" QueryId="{TemplateBinding QueryId}" AutoPopulate="{TemplateBinding AutoPopulate}" 
+                                       SelectAction="{TemplateBinding SelectAction}" DoubleClickAction="{TemplateBinding DoubleClickAction}"
+                                       SetContextOnSelect="{TemplateBinding SetContextOnSelect}" SetContextOnDoubleClick="{TemplateBinding SetContextOnDoubleClick}"
+                                       Margin="0,3" ap:ShowControl.TargetControl="{TemplateBinding EditControl}" />
+
+                        <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <ec:DataGridEditButton MaxHeight="30" MaxWidth="30" Margin="0,0,0,3" MethodName="Restart" ModelObject="{TemplateBinding ModelObject}" ap:ShowControl.TargetControl="{TemplateBinding EditControl}" ToolTipService.ToolTip="Add">
+                                <Image Source="/Expanz.ThinRIA.Core.Silverlight;component/Images/Add.png" Stretch="None" />
+                            </ec:DataGridEditButton>
+
+                            <ec:DataGridEditButton MaxHeight="30" MaxWidth="30" Margin="0,3" ap:ShowControl.TargetControl="{TemplateBinding EditControl}" ToolTipService.ToolTip="Edit">
+                                <Image Source="/Expanz.ThinRIA.Core.Silverlight;component/Images/Edit.png" Stretch="None" />
+                            </ec:DataGridEditButton>
+
+                            <ec:DataGridEditButton MethodName="DeleteConfirm" ModelObject="{TemplateBinding ModelObject}" MaxHeight="30" MaxWidth="30" Margin="0,3" ToolTipService.ToolTip="Delete">
+                                <Image Source="/Expanz.ThinRIA.Core.Silverlight;component/Images/Delete.png" Stretch="None" />
+                            </ec:DataGridEditButton>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
