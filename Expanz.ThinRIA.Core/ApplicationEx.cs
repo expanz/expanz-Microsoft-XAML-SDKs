@@ -306,11 +306,11 @@ namespace Expanz.ThinRIA
         /// <param name="password">Client password</param>
         /// <param name="site"></param>
         /// <param name="deviceName"></param>
-        public void CreateSession(string userName, string password, string site, string deviceName, EventHandler<AuthenticationCompletedEventArgs> authenticationComplete)
+        public void CreateSession(string userName, string password, string site, string deviceName, AuthenticationMode authenticationMode, EventHandler<AuthenticationCompletedEventArgs> authenticationComplete)
         {
             ActiveSession = new Session(ServerApplicationService);
 
-            var auth = new ExpanzAuthentication(ClientType.Xaml, site, deviceName, AuthenticationMode.Primary);
+            var auth = new ExpanzAuthentication(ClientType.Xaml, site, deviceName, authenticationMode);
             auth.Authenticate(userName, password, ActiveSession.AuthenticationComplete);
 
             if (authenticationComplete != null)

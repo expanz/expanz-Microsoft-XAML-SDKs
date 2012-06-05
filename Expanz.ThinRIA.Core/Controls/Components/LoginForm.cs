@@ -120,6 +120,15 @@ namespace Expanz.ThinRIA.Controls
                 passwordField.Password = e.NewValue.ToString();
 #endif
         }
+        
+        public AuthenticationMode AuthenticationMode
+        {
+            get { return (AuthenticationMode)GetValue(AuthenticationModeProperty); }
+            set { SetValue(AuthenticationModeProperty, value); }
+        }
+
+        public static readonly DependencyProperty AuthenticationModeProperty =
+            DependencyProperty.Register("AuthenticationMode", typeof(AuthenticationMode), typeof(LoginForm), null);
 
         public String BusyStatusText
         {
@@ -186,7 +195,7 @@ namespace Expanz.ThinRIA.Controls
             if (LoginButton != null)
                 LoginButton.IsEnabled = false;
 
-            _context.CreateSession(UserName, Password, _context.PreferredSite, "", AppContext_AuthenticationCompleted);
+            _context.CreateSession(UserName, Password, _context.PreferredSite, "", AuthenticationMode, AppContext_AuthenticationCompleted);
         }
 
         private void AppContext_AuthenticationCompleted(object sender, AuthenticationCompletedEventArgs e)
