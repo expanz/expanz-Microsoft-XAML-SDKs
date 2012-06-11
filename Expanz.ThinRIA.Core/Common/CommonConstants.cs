@@ -158,7 +158,7 @@ namespace Expanz
                     s = bool.TrueString;
                     break;
                 default:
-                    s = bool.TrueString;
+                    s = bool.FalseString;
                     break;
             }
 
@@ -193,6 +193,7 @@ namespace Expanz
             public const string DomainAttrib = "authDomain";
             public const string ModeAlternate = "ALTERNATE";
             public const string ModeAttrib = "authenticationMode";
+            public const string ClientType = "clientType";
             public const string ModeGuest = "GUEST";
             public const string ModePrimary = "PRIMARY";
             public const string PasswordAttrib = "password";

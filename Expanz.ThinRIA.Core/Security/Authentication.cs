@@ -55,12 +55,12 @@ namespace Expanz.ThinRIA.Security
         private string BuildAuthenticationMessage(string userName, string password)
         {
             var createSessionNode = CreateSessionXDoc.Root.FirstNode as XElement;
-            createSessionNode.SetAttributeValue("user", userName);
-            createSessionNode.SetAttributeValue("password", password);
-            createSessionNode.SetAttributeValue("clientType", ClientType.ToString().ToUpper());
-            createSessionNode.SetAttributeValue("appSite", Site);
-            createSessionNode.SetAttributeValue("station", ClientHost);
-            createSessionNode.SetAttributeValue("authMode", Mode.ToString().ToUpper());
+            createSessionNode.SetAttributeValue(Common.Authentication.UserAttrib, userName);
+            createSessionNode.SetAttributeValue(Common.Authentication.PasswordAttrib, password);
+            createSessionNode.SetAttributeValue(Common.Authentication.ClientType, ClientType.ToString().ToUpper());
+            createSessionNode.SetAttributeValue(Common.Authentication.SiteAttrib, Site);
+            createSessionNode.SetAttributeValue(Common.Authentication.WorkstationAttrib, ClientHost);
+            createSessionNode.SetAttributeValue(Common.Authentication.ModeAttrib, Mode.ToString().ToUpper());
 
             return CreateSessionXDoc.ToString();
         }
