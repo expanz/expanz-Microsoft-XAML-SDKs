@@ -11,13 +11,13 @@ namespace Expanz.ThinRIA.Controls
     public class DatePickerEx : DatePicker, IServerBoundControl, IEditableControl
     {
         #region Member Variables
-        private ControlHarness _controlHarness; 
+        private ControlHarness _controlHarness;
+        private bool _isLoading = false;
         #endregion
 
         #region Constructor
         public DatePickerEx() : base()
         {
-            this.LostFocus += new RoutedEventHandler(DatePicker_LostFocus);
             this.Loaded += new RoutedEventHandler(DatePickerEx_Loaded);
         } 
         #endregion
@@ -28,10 +28,13 @@ namespace Expanz.ThinRIA.Controls
             InitHarness();
         }
 
-        private void DatePicker_LostFocus(object sender, RoutedEventArgs e)
+        protected override void OnSelectedDateChanged(SelectionChangedEventArgs e)
         {
-            _controlHarness.SendXml(DeltaXml);
-        } 
+            base.OnSelectedDateChanged(e);
+
+            if (!_isLoading)
+                _controlHarness.SendXml(DeltaXml);
+        }
         #endregion
 
         #region Public Methods
@@ -85,9 +88,10 @@ namespace Expanz.ThinRIA.Controls
             DateTime dt;
             if (DateTime.TryParse(text, out dt))
             {
+                _isLoading = true;
                 this.DisplayDate = dt;
                 this.Text = dt.ToString();
-                
+                _isLoading = false;
             }
         }
 
